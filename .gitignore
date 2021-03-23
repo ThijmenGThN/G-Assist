@@ -1,3 +1,8 @@
 
+# Environmental files
 .env
+.env-dev
+.env-build
+
+# Core files
 node_modules

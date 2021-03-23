@@ -31,6 +31,7 @@ G.cli.on(`message`, res => {
     // Host activation toggler
     require(`./utils/toggle`)(G, res)
 
+    
     // Assist foreign requester
     require(`./utils/assist`)(G, res)
 

@@ -40,17 +40,22 @@ module.exports = (G, res) => {
     console.log(res.author.tag, `seeked contact, emitting afk message.`)
 
     
-    // Simulate conversation
-    res.channel.startTyping()
+    // Apply reply delay
     setTimeout(() => {
 
-        // Respond to requester with prefab response
-        res.channel.send(process.env.response_message)
-        
-        
-        // Terminate typing behaviour
-        res.channel.stopTyping()
+        // Simulate conversation
+        res.channel.startTyping()
+        setTimeout(() => {
 
-    }, process.env.typing_duration)
+            // Respond to requester with prefab response
+            res.channel.send(process.env.response_message)
+        
+        
+            // Terminate typing behaviour
+            res.channel.stopTyping()
+
+        }, process.env.typing_duration)
+        
+    }, process.env.reply_delay)
 
 }

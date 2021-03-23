@@ -13,9 +13,14 @@ module.exports = (G, res) => {
 
 
     console.log(`State changed, listening:`, G.state.listening)
-    
 
+
+    // Respond to toggle and delete
+    res.channel.send(`Listening set to: \` ${G.state.listening} \``)
+    .then(post => setTimeout(() => post.delete(1), 2500))
+    
+    
     // Delete toggle command
-    res.delete(1)
+    setTimeout(() => res.delete(1), 2500)
 
 }
